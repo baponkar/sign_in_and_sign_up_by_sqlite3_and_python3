@@ -6,4 +6,4 @@
 
 `Sudo apt update && sudo apt install sqlite3 && sudo pip3 install sqlite3`
 
-## First you need to run `python3 sign_up.py` or `./sign_up`
+First you need to run `python3 sign_up.py` or `./sign_up`
