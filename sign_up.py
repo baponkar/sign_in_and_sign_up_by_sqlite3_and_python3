@@ -41,11 +41,14 @@ while True:
         print("This username already present please pick a different username")
     else:
         p = getpass.getpass()
-        #generate hash for password
-        phash = hashlib.sha256(p.encode('utf-8')).hexdigest()
-        #put data
-        curs.execute('INSERT INTO users ( username, password) VALUES(?,? )',(str(username),str(phash)))
-        break
+        if len(p) < 8:
+        	print("Please enter 8 digit length password")
+        else:
+        	#generate hash for password
+        	phash = hashlib.sha256(p.encode('utf-8')).hexdigest()
+        	#put data
+        	curs.execute('INSERT INTO users ( username, password) VALUES(?,? )',(str(username),str(phash)))
+        	break
 
 
 curs.close()
